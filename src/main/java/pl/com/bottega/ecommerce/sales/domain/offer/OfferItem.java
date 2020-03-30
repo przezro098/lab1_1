@@ -17,6 +17,10 @@ import java.util.Date;
 import java.util.Objects;
 
 public class OfferItem {
+    //money
+    private Money discount;
+
+    private Money totalCost;
 
     // product
     private String productId;
@@ -31,16 +35,12 @@ public class OfferItem {
 
     private int quantity;
 
-    private BigDecimal totalCost;
-
     private String currency;
 
     // discount
     private String discountCause;
 
-    private BigDecimal discount;
-
-    public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
+        public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate, String productType,
             int quantity) {
         this(productId, productPrice, productName, productSnapshotDate, productType, quantity, null, null);
     }
@@ -62,9 +62,7 @@ public class OfferItem {
             discountValue = discountValue.add(discount);
         }
 
-        this.totalCost = productPrice.multiply(new BigDecimal(quantity))
-                                     .subtract(discountValue);
-    }
+   }
 
     public String getProductId() {
         return productId;
