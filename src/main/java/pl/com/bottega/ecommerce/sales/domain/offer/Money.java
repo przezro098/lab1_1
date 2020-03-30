@@ -48,4 +48,14 @@ public class Money
     {
         return denomination.compareTo(totalCost.getDenomination());
     }
+
+    public void setDenomination(BigDecimal denomination)
+    {
+        this.denomination = denomination;
+    }
+
+    public void setCurrency(String currency)
+    {
+        this.currency = currency;
+    }
 }
